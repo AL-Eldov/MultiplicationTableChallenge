@@ -1,11 +1,46 @@
 {
   "Version": 1,
-  "Hash": "l3kPSNYbsHAlekyR5EC+4bu3AwA9XP3OfU+7Rx+Ofg0=",
+  "Hash": "Ce+4peNh2iG5Q4mffGvHrrgk8pudGu6hSLiw3/uhfgk=",
   "Source": "MTC_project",
   "BasePath": "_content/MTC_project",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "D:\\LearningPath\\Programming\\C#\\Tasks\\MTC_project\\MTC_project\\obj\\Debug\\net7.0\\scopedcss\\bundle\\MTC_project.styles.css",
+      "SourceId": "MTC_project",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\LearningPath\\Programming\\C#\\Tasks\\MTC_project\\MTC_project\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/MTC_project",
+      "RelativePath": "MTC_project.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\LearningPath\\Programming\\C#\\Tasks\\MTC_project\\MTC_project\\obj\\Debug\\net7.0\\scopedcss\\bundle\\MTC_project.styles.css"
+    },
+    {
+      "Identity": "D:\\LearningPath\\Programming\\C#\\Tasks\\MTC_project\\MTC_project\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\MTC_project.bundle.scp.css",
+      "SourceId": "MTC_project",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\LearningPath\\Programming\\C#\\Tasks\\MTC_project\\MTC_project\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/MTC_project",
+      "RelativePath": "MTC_project.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\LearningPath\\Programming\\C#\\Tasks\\MTC_project\\MTC_project\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\MTC_project.bundle.scp.css"
+    }
+  ]
 }
