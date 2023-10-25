@@ -8,5 +8,17 @@ namespace MTC_project.Controllers
         {
             return View();
         }
+        public IActionResult RulesPage()
+        {
+            return View();
+        }
+       /* public IActionResult RanksPage()
+        {
+            return View();
+        }*/
+        public IActionResult AboutSitePage()
+        {
+            return View();
+        }
     }
 }

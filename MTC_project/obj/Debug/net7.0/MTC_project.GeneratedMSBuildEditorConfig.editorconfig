@@ -16,12 +16,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\LearningPath\Programming\C#\Tasks\MTC_project\MTC_project
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/LearningPath/Programming/C\#/Tasks/MTC_project/MTC_project/Views/Master/AboutSitePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXEFib3V0U2l0ZVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/LearningPath/Programming/C\#/Tasks/MTC_project/MTC_project/Views/Master/HomePage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXEhvbWVQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/LearningPath/Programming/C\#/Tasks/MTC_project/MTC_project/Views/Master/RulesPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyXFJ1bGVzUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/LearningPath/Programming/C\#/Tasks/MTC_project/MTC_project/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/LearningPath/Programming/C\#/Tasks/MTC_project/MTC_project/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/LearningPath/Programming/C\#/Tasks/MTC_project/MTC_project/Views/_ViewStart.cshtml]
