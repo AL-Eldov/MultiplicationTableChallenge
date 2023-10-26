@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Дамашняя страница сайта с кнопкой играть";
+    @model User
+}
+<!doctype html>
+<html>
+<head>
+    <title>Домашняя страница сайта</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+	<h2><i> <b> @Model.Name, Вы хотите начать решать задания?  </b></i> </h2>
+   
+    <form>
+        <p>
+            <a asp-action="PlayPage" asp-controller="Master" class="btn btn-danger btn-lg">НАЧАТЬ </a>
+        </p>
+    </form>
+</body>
+</html>

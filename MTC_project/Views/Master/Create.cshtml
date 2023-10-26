@@ -1,0 +1,20 @@
+﻿@model MTC_project.Models.User
+
+<h2>Зарешестрироваться</h2>
+<form asp-action="Create" asp-controller="Master">
+    <p>
+        <label asp-for="Name">Логин</label><br />
+        <input type="text" asp-for="Name" />
+    </p>
+    <p>
+        <label asp-for="Password">Пароль</label><br />
+        <input type="password" asp-for="Password" />
+    </p>
+    <p>
+        <label>Повторите пароль</label><br />
+        <input type="password" asp-for="Password" />
+    </p>
+    <p>
+        <input type="submit" value="Создать" />
+    </p>
+</form>
