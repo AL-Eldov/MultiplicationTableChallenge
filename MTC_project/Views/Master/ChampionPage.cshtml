@@ -1,0 +1,82 @@
+﻿
+<style>
+    .glyphicon {
+        display: inline-block;
+        padding: 0 5px;
+    }
+
+    .glyphicon-chevron-right:after {
+        content: "\00BB";
+    }
+
+    .glyphicon-chevron-left:before {
+        content: "\00AB";
+    }
+</style>
+
+<h1>Список лучших</h1>
+<form method="get">
+    <label>Логин: </label>
+    <input name="name" value="@Model.FilterViewModel.SelectedName" />
+
+    <label for="Rank">Ранк:</label>
+    <select id="Rank" name="Rank">
+        <option value="@Ranks.RankAll">Все</option>
+        <option value="@Ranks.Rank0">Без ранга</option>
+        <option value="@Ranks.Rank1">Первый ранг</option>
+        <option value="@Ranks.Rank2">Второй ранг</option>
+        <option value="@Ranks.Rank3">Третий ранг</option>
+        <option value="@Ranks.Rank4">Четвертый ранг</option>
+        <option value="@Ranks.Rank5">Пятый ранг</option>
+        <option value="@Ranks.Rank6">Шестой ранг</option>
+        <option value="@Ranks.Rank7">Седьмой ранг</option>
+        <option value="@Ranks.Rank8">Восьмой ранг</option>
+        <option value="@Ranks.Rank9">Девятый ранг</option>
+        <option value="@Ranks.Rank10">Десятый ранг</option>
+    </select>
+
+    <input type="submit" value="Фильтр" />
+</form>
+
+<table>
+    <tr>
+        <th>
+            <a asp-action="ChampionPage"
+               asp-route-sortOrder="@(Model.SortViewModel.NameSort)"
+               asp-route-name="@(Model.FilterViewModel.SelectedName)"
+               asp-route-Rank="@(Model.FilterViewModel.SelectedRank)">Имя</a>
+        </th>
+        <th>
+            <a asp-action="ChampionPage" 
+               asp-route-sortOrder="@(Model.SortViewModel.RankSort)"
+               asp-route-name="@(Model.FilterViewModel.SelectedName)"
+               asp-route-Rank="@(Model.FilterViewModel.SelectedRank)">Ранк</a>
+        </th>
+    </tr>
+    @foreach (User u in Model.Users)
+    {
+        <tr><td>@u.Name</td><td>@u.Rank.ToString()</td></tr>
+    }
+</table>
+<p>
+    @if (Model.PageViewModel.HasPreviousPage)
+    {
+        <a asp-action="ChampionPage"
+           asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+           asp-route-name="@(Model.FilterViewModel.SelectedName)"
+           asp-route-sortorder="@(Model.SortViewModel.Current)"
+           class="glyphicon glyphicon-chevron-left">
+            Назад
+        </a>
+    }
+    @if (Model.PageViewModel.HasNextPage)
+    {
+        <a asp-action="ChampionPage"
+           asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+           asp-route-name="@(Model.FilterViewModel.SelectedName)"
+           asp-route-sortorder="@(Model.SortViewModel.Current)"
+           class="glyphicon glyphicon-chevron-right">
+            Вперед
+        </a>
+    }
+</p>

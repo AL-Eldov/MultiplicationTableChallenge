@@ -1,22 +1,32 @@
-﻿@{
-    ViewBag.Title = "дамашняя страница сайта";
+﻿@model MTC_project.Models.User
+@{
+    ViewBag.Title = "Страница с игрой";
+    Random rnd = new Random();
+    int tempValue1 = rnd.Next(1, 9);
+    int tempValue2 = rnd.Next(1, 9);
+    int result = tempValue1 * tempValue2;
 }
 <!doctype html>
 <html>
 <head>
-    <title>Домашняя страница сайта</title>
+    <title>Страница с игрой</title>
     <meta charset="utf-8" />
 </head>
 <body>
-    <form>
+    <h2>@Model.Name, введите результат умножения</h2>
+    <br>
+    <h2>
+        @tempValue1 * @tempValue2 =
+    </h2>
+	<form asp-action="PlayPage" asp-controller="Master" asp-route-id="@Model.Id" asp-route-correctAnswer="@result">
+
         <p>
-            <a asp-action="EnterUser" asp-controller="Master" class="btn btn-danger btn-lg">Зарегестрироваться </a>
+			<input type="number" name="userAnswer"   />
+        </p>
+        <p>
+            <input type="submit" value="Ответить" />
         </p>
     </form>
-    <form>
-        <p>
-            <a asp-action="Create" asp-controller="Master" class="btn btn-danger btn-lg">Зарегестрироваться </a>
-        </p>
-    </form>
+    
 </body>
 </html>
