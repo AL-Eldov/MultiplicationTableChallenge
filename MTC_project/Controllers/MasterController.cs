@@ -67,9 +67,10 @@ namespace MTC_project.Controllers
         public async Task<IActionResult> PlayPage(int id, int correctAnswer, int userAnswer)
         {
             User? user = await db.Users.FirstOrDefaultAsync(p => p.Id == id);
-            if (user is not null && userAnswer == correctAnswer)
+            if (user is not null)
             {
-                user.Rating += 1;
+                user.Rating += userAnswer == correctAnswer ? 1 : -1;
+                user.CheckRise();
                 db.Users.Update(user);
                 await db.SaveChangesAsync();
             }
