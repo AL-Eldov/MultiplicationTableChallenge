@@ -16,7 +16,7 @@
 
 <h1>Список лучших</h1>
 <form method="get">
-    <label>Логин: </label>
+    <label>Имя: </label>
     <input name="name" value="@Model.FilterViewModel.SelectedName" />
 
     <label for="Rank">Ранк:</label>
@@ -35,10 +35,30 @@
         <option value="@Ranks.Rank10">Десятый ранг</option>
     </select>
 
-    <input type="submit" value="Фильтр" />
+    <input type="submit" value="Отобрать" />
 </form>
+<br>
+<br>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Таблица</title>
+    <style type="text/css">
+        TABLE {
+            width: 510px; /* Ширина таблицы */
+            border-collapse: collapse; /* Убираем двойные линии между ячейками */
+        }
 
-<table>
+        TD, TH {
+            padding: 10px; /* Поля вокруг содержимого таблицы */
+            border: 2px solid black; /* Параметры рамки */
+        }
+
+        TH {
+            background: #b0e0e6; /* Цвет фона */
+        }
+    </style>
+</head>
+<table >
     <tr>
         <th>
             <a asp-action="ChampionPage"
@@ -52,10 +72,16 @@
                asp-route-name="@(Model.FilterViewModel.SelectedName)"
                asp-route-Rank="@(Model.FilterViewModel.SelectedRank)">Ранк</a>
         </th>
+        <th>
+            <a asp-action="ChampionPage"
+               asp-route-sortOrder="@(Model.SortViewModel.RatingSort)"
+               asp-route-name="@(Model.FilterViewModel.SelectedName)"
+               asp-route-Rank="@(Model.FilterViewModel.SelectedRank)">Рейтиг</a>
+        </th>
     </tr>
     @foreach (User u in Model.Users)
     {
-        <tr><td>@u.Name</td><td>@u.Rank.ToString()</td></tr>
+        <tr><td>@u.Name</td><td>@u.Rank.ToString()</td><td>@u.Rating</td></tr>
     }
 </table>
 <p>

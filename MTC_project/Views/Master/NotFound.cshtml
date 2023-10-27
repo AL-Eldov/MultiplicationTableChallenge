@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Страница ненайденного пользователя";
+}
+<!doctype html>
+<html>
+<head>
+    <title>Страница с правилами</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <p class="center">
+        <h2><i> <b> Пользователь не найден</b></i> </h2>
+
+        <div> Неверно введен логин или пароль </div>
+
+        <form>
+        <p>
+                <a asp-action="EnterUser" asp-controller="Master" class="btn btn-danger btn-lg">Попробовать снова </a>
+        </p>
+        </form>
+    </p>
+</body>
+</html>

@@ -23,8 +23,15 @@ namespace MTC_project.Controllers
         public async Task<IActionResult> EnterUser(User user)
         {
             User? realUser = await db.Users.FirstOrDefaultAsync(p => p.Name == user.Name && p.Password == user.Password);
-            if (user != null) return View("HomePagePlay", realUser);
-            return NotFound();
+            if (realUser is not null)
+            {
+                return View("HomePagePlay", realUser);
+            }
+            else
+            {
+                return View("NotFound");
+            }
+
         }
         public IActionResult Create()
         {
@@ -68,12 +75,8 @@ namespace MTC_project.Controllers
             }
             return View(user);
         }
-        /// <summary>
-        /// /////////////////////////////////////////////////////////////////////
-        /// </summary>
-
-        public async Task<IActionResult> ChampionPage(string name, Ranks rank, int page = 1,
-            SortState sortOrder = SortState.NameAsc)
+        public async Task<IActionResult> ChampionPage(string name, Ranks rank = Ranks.RankAll, int page = 1,
+            SortState sortOrder = SortState.RatingDesc)
         {
             int pageSize = 5;//Наличие магического числа не очень хорошо, но здесь вроде понятно что оно нужно для пагинации 
 
@@ -95,14 +98,20 @@ namespace MTC_project.Controllers
                 case SortState.NameDesc:
                     users = users.OrderByDescending(s => s.Name);
                     break;
+                case SortState.NameAsc:
+                    users = users.OrderBy(s => s.Name);
+                    break;
                 case SortState.RankDesc:
                     users = users.OrderByDescending(s => s.Rank);
                     break;
                 case SortState.RankAsc:
-                    users = users.OrderByDescending(s => s.Rank);
+                    users = users.OrderBy(s => s.Rank);
+                    break;
+                case SortState.RatingAsc:
+                    users = users.OrderBy(s => s.Rating);
                     break;
                 default:
-                    users = users.OrderBy(s => s.Name);
+                    users = users.OrderByDescending(s => s.Rating);
                     break;
             }
 
