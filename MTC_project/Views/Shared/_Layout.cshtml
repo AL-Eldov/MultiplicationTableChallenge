@@ -42,7 +42,19 @@
     
     <footer class="border-top footer text-muted">
         <div class="container">
-            Лучший результат:
+            @if (ViewBag.Page == "HomePage")
+            {
+                <h6> Лучший результат у @ViewBag.User.Name со счетом @ViewBag.User.Rating</h6>
+            }
+            else if (ViewBag.Page == "PlayPage")
+            {
+                <h6>  Личный результат пользователя @ViewBag.User.Name : @ViewBag.User.Rating</h6>
+            }
+            else if (ViewBag.Page is null)
+            {
+                <h6> Скорее присоединяйся и начинай!</h6>
+            }
+            
         </div>
     </footer>
 

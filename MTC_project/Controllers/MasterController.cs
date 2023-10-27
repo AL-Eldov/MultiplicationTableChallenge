@@ -13,6 +13,8 @@ namespace MTC_project.Controllers
         }
         public IActionResult HomePage()
         {
+            ViewBag.User = db.Users.OrderByDescending(s => s.Rating).First();
+            ViewBag.Page = "HomePage";
             return View();
         }
         public IActionResult EnterUser()
@@ -61,6 +63,8 @@ namespace MTC_project.Controllers
         public async Task<IActionResult> PlayPage(int id)
         {
             User? user = await db.Users.FirstOrDefaultAsync(p => p.Id == id);
+            ViewBag.User = user;
+            ViewBag.Page = "PlayPage";
             return View(user);
         }
         [HttpPost]
@@ -74,6 +78,8 @@ namespace MTC_project.Controllers
                 db.Users.Update(user);
                 await db.SaveChangesAsync();
             }
+            ViewBag.User = user;
+            ViewBag.Page = "PlayPage";
             return View(user);
         }
         public async Task<IActionResult> ChampionPage(string name, Ranks rank = Ranks.RankAll, int page = 1,
